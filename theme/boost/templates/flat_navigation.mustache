@@ -1,0 +1,106 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_boost/flat_navigation
+
+    Display the flat navigation for the boost theme
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * flatnavigation - array of flat_navigation_nodes
+      * showdivider - boolean
+      * action - string
+      * isactive - boolean
+      * get_indent - integer
+      * is_section - boolean
+      * text - HTML
+
+    Example context (json):
+    {
+        "flatnavigation" : [
+            {
+                "showdivider": false,
+                "action": "#",
+                "isactive": true,
+                "get_indent": 1,
+                "is_section": false,
+                "text": "First"
+            },{
+                "showdivider": true,
+                "action": "#",
+                "isactive": false,
+                "get_indent": 0,
+                "is_section": true,
+                "text": "Last &amp; Second"
+            }
+        ]
+    }
+}}
+
+<nav class="list-group" aria-label="{{firstcollectionlabel}}" 1>
+<a class="main-aside__logo" href="/" style="width: 145px;height: 68px;margin-bottom:29px;"><svg id="logo" viewBox="0 0 139 41" width="100%" height="100%">
+<path d="M0.389539 2.04615V35H9.52246V2.04615H0.389539ZM6.22708 9.43723H12.5825C14.0262 9.43723 15.1403 9.75108 15.9249 10.3788C16.7095 11.0065 17.1018 11.9009 17.1018 13.0622C17.1018 14.2548 16.7095 15.1649 15.9249 15.7926C15.1403 16.4203 14.0262 16.7342 12.5825 16.7342H6.22708V24.0782H12.5825C15.5954 24.0782 18.0748 23.6388 20.0206 22.76C21.9978 21.8812 23.4572 20.6102 24.3988 18.9468C25.3717 17.2834 25.8582 15.3218 25.8582 13.0622C25.8582 10.7711 25.3717 8.80954 24.3988 7.17754C23.4572 5.54554 21.9978 4.29015 20.0206 3.41138C18.0748 2.50123 15.5954 2.04615 12.5825 2.04615H6.22708V9.43723ZM38.8764 18.5231C38.8764 16.6714 39.2844 15.1022 40.1004 13.8154C40.9478 12.4972 42.0619 11.5086 43.4429 10.8495C44.8238 10.1591 46.3459 9.81384 48.0093 9.81384C49.5785 9.81384 50.9438 10.0178 52.105 10.4258C53.2662 10.8338 54.3019 11.3674 55.2121 12.0265C56.1222 12.6542 56.9226 13.3289 57.613 14.0508V4.44707C56.3262 3.47415 54.8982 2.68954 53.329 2.09323C51.7912 1.49692 49.8139 1.19877 47.3973 1.19877C44.6669 1.19877 42.1561 1.60677 39.865 2.42277C37.5739 3.23877 35.6124 4.41569 33.9804 5.95354C32.3484 7.49138 31.0773 9.32738 30.1672 11.4615C29.2884 13.5643 28.849 15.9182 28.849 18.5231C28.849 21.128 29.2884 23.4975 30.1672 25.6317C31.0773 27.7345 32.3484 29.5548 33.9804 31.0926C35.6124 32.6305 37.5739 33.8074 39.865 34.6234C42.1561 35.4394 44.6669 35.8474 47.3973 35.8474C49.8139 35.8474 51.7912 35.5492 53.329 34.9529C54.8982 34.3252 56.3262 33.5406 57.613 32.5991V22.9954C56.9226 23.7172 56.1222 24.4077 55.2121 25.0668C54.3019 25.6945 53.2662 26.2123 52.105 26.6203C50.9438 27.0283 49.5785 27.2323 48.0093 27.2323C46.3459 27.2323 44.8238 26.9028 43.4429 26.2437C42.0619 25.5532 40.9478 24.5646 40.1004 23.2778C39.2844 21.9597 38.8764 20.3748 38.8764 18.5231ZM81.0775 16.3105L87.2446 33.5877H97.9311L81.0775 0.398461L64.2711 33.5877H74.9575L81.0775 16.3105ZM91.2462 35V40.1785H100.473V27.2323H61.7289V40.1785H70.956V35H91.2462ZM112.333 18.5231C112.333 16.7342 112.679 15.1649 113.369 13.8154C114.059 12.4658 115.032 11.4145 116.288 10.6612C117.543 9.87661 119.018 9.4843 120.713 9.4843C122.502 9.4843 124.008 9.87661 125.232 10.6612C126.488 11.4145 127.445 12.4658 128.104 13.8154C128.763 15.1649 129.093 16.7342 129.093 18.5231C129.093 20.2806 128.747 21.8498 128.057 23.2308C127.367 24.5803 126.394 25.6474 125.138 26.432C123.914 27.1852 122.439 27.5618 120.713 27.5618C119.018 27.5618 117.543 27.1852 116.288 26.432C115.032 25.6474 114.059 24.5803 113.369 23.2308C112.679 21.8498 112.333 20.2806 112.333 18.5231ZM102.683 18.5231C102.683 21.0966 103.122 23.4662 104.001 25.6317C104.879 27.7972 106.119 29.6803 107.72 31.2809C109.352 32.8502 111.266 34.0742 113.463 34.9529C115.66 35.8003 118.077 36.224 120.713 36.224C123.349 36.224 125.766 35.8003 127.963 34.9529C130.191 34.0742 132.106 32.8502 133.706 31.2809C135.307 29.6803 136.547 27.7972 137.425 25.6317C138.304 23.4662 138.743 21.0966 138.743 18.5231C138.743 15.9182 138.288 13.5643 137.378 11.4615C136.499 9.32738 135.244 7.50708 133.612 6.00061C131.98 4.46277 130.066 3.28584 127.869 2.46984C125.703 1.62246 123.318 1.19877 120.713 1.19877C118.171 1.19877 115.801 1.62246 113.604 2.46984C111.439 3.28584 109.54 4.46277 107.908 6.00061C106.276 7.50708 104.989 9.32738 104.048 11.4615C103.138 13.5643 102.683 15.9182 102.683 18.5231Z" fill="#1E59E1"></path>
+</svg></a>
+<hr size="1" style="left: 0;margin:0 0 29px -60px;width: auto;display:block;" />
+    <ul>
+    {{# flatnavigation }}
+        {{#showdivider}}
+            </ul>
+            </nav>
+            <nav class="list-group mt-1" aria-label="{{get_collectionlabel}}">
+            <ul>
+        {{/showdivider}}
+        {{#action}}
+            <li>
+                <a class="list-group-item list-group-item-action {{#isactive}}active{{/isactive}} {{#classes}}{{.}} {{/classes}}" href="{{{action}}}" data-key="{{key}}" data-isexpandable="{{isexpandable}}" data-indent="{{get_indent}}" data-showdivider="{{showdivider}}" data-type="{{type}}" data-nodetype="{{nodetype}}" data-collapse="{{collapse}}" data-forceopen="{{forceopen}}" data-isactive="{{isactive}}" data-hidden="{{hidden}}" data-preceedwithhr="{{preceedwithhr}}" {{#parent.key}}data-parent-key="{{.}}"{{/parent.key}}>
+                    <div class="ml-{{get_indent}}">
+                        <div class="media">
+                            {{#icon.pix}}
+                                <span class="media-left">
+                                   {{#pix}}{{{icon.pix}}}, {{{icon.component}}}, {{{icon.alt}}}{{/pix}}
+                                </span>
+                            {{/icon.pix}}
+                            <span class="media-body">{{{text}}}</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        {{/action}}
+        {{^action}}
+            <li>
+                <div class="list-group-item {{#classes}}{{.}} {{/classes}}" data-key="{{key}}" data-isexpandable="{{isexpandable}}" data-indent="{{get_indent}}" data-showdivider="{{showdivider}}" data-type="{{type}}" data-nodetype="{{nodetype}}" data-collapse="{{collapse}}" data-forceopen="{{forceopen}}" data-isactive="{{isactive}}" data-hidden="{{hidden}}" data-preceedwithhr="{{preceedwithhr}}" {{#parent.key}}data-parent-key="{{.}}"{{/parent.key}}>
+                    <div class="ml-{{get_indent}}">
+                        <div class="media">
+                            {{#icon.pix}}
+                                <span class="media-left">
+                                    {{#pix}}{{{icon.pix}}}, {{{icon.component}}}, {{{icon.alt}}}{{/pix}}
+                                </span>
+                            {{/icon.pix}}
+                            <span class="media-body">{{{text}}}</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {{/action}}
+    {{/ flatnavigation }}
+    </ul>
+</nav>
